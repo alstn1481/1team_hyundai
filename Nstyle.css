@@ -1,0 +1,212 @@
+@charset "utf-8";
+
+*{margin: 0; padding:0; box-sizing: border-box;}
+:root{--main:black; --sub:ivory; font-family: 'Paperlogy-8ExtraBold';background: black;}
+::-webkit-scrollbar{width: 0px !important; }
+::-moz-scrollbar{width: 0px !important; }
+#layout {
+    max-width: 1920px; margin: auto;
+};
+
+
+img{width:100%}
+
+@font-face {
+    font-family: 'Paperlogy-8ExtraBold';
+    src: url('https://fastly.jsdelivr.net/gh/projectnoonnu/2408-3@1.0/Paperlogy-8ExtraBold.woff2') format('woff2');
+    font-weight: 800;
+    font-style: normal;
+  }
+  
+
+/* 비디오 */
+    .video-container {
+    position: relative;
+    width: 100%;
+    padding-bottom: 56.25%;
+    height: 0;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.video-container::before,
+.video-container::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 30%; /* 그라데이션 높이 */
+    z-index: 1;
+}
+
+.video-container::before {
+    top: 0;
+    background: linear-gradient(to bottom, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+}
+
+.video-container::after {
+    bottom: 0;
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0));
+}
+
+.video-container video {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+
+/* 헤더 */   
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 60px;
+    background: none;
+    color: white;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    box-shadow: none;
+    transition: top 0.3s ease;
+    margin: 20px 0;
+}
+
+
+header div {
+    width: 100%;
+    display: flex;
+    justify-content: space-between; 
+}
+
+header div div {
+    display: flex;
+    justify-content: center;
+}
+
+/* 버튼 */
+header button {
+    padding: 8px;
+    margin: 0 15px;
+    width: 40px;
+    height: 40px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+/* 버튼 호버 */
+header button:hover {
+    background-color: rgba(255, 255, 255, 0.5);
+}
+
+/* 버튼 클릭 */
+header button:active {
+    background-color: rgba(255, 255, 255, 0.3); 
+}
+
+
+/* 아이콘 크기 */
+.material-symbols-outlined {
+    font-variation-settings:
+        'FILL' 0,
+        'wght' 500,
+        'GRAD' 0,
+        'opsz' 24; 
+    font-size: 24px;  /* 아이콘 크기 */
+    color: white;
+    background: none;
+    border: none;
+}
+
+#logo {
+    width: 10%;
+    max-width: 100%; 
+    height: auto;
+}
+
+nav{display: flex; height: 85vh; width:100%; top:10vh; opacity:0; z-index: -1;
+     position: absolute; z-index: 1000;}
+
+
+nav aside {height:100%; width:70%; position: relative; top:0; left:0; 
+    background-image: url("images/nav-0.jpg");
+    opacity: 0;
+    background-repeat: no-repeat;
+    background-size: cover;
+    animation: pop 2s both ease-out;
+}
+
+#seolmeong{ height:95%;  color:whitesmoke;
+display:flex; justify-content:center; align-items: flex-end; font-size: 2rem;
+
+}
+#seolmeong>div:last-of-type {margin-left: 2vw;}
+
+aside button{position: absolute; padding:20px 24px 20px 22px; font-family: 'Paperlogy-8ExtraBold'; 
+    left:95%; top:5%; background: black; color:white; border: 1px solid gray;  border-radius: 100%; }
+aside button:hover{background: #a1c4eb ;}
+
+nav>div{padding-left: 2vw;  height:100%; 
+    background: black;
+    width:30% }
+nav ul li a {color: ivory;}
+nav ul li a:hover {color:#a1c4eb;}
+
+
+
+#carpic>img{height: 85vh;}
+nav div>ul{list-style: none;}
+nav>div a{ font-size: 1.5rem; padding-bottom: 2vh; display: block;
+    text-decoration: none; color:black; line-height: 180%;}
+#register {display: block; opacity: 0;
+     position: relative;  top:55%; text-align: right;  animation: pop 2s both ease-out; }
+#register a{padding: 10px; background: #a1c4eb; color:black;}
+#register a:hover{color: ivory;}
+
+
+#minsection{height: 100vh;}
+
+
+
+footer {
+    background-color: var(--sub);
+    text-align: center;
+}
+
+@keyframes tenkai{
+    0%{transform: translateX(-15vw); opacity: 0.2; }
+    80%{transform: translateX(2vw); opacity: 0.8; }
+    100%{transform: translateX(0vw); opacity: 1;}
+}
+
+
+@keyframes carcome{
+    0%{transform: translateX(10vw); opacity: 0; }
+    100%{transform: translateX(0); opacity: 1;}
+}
+
+
+@keyframes pop{
+    0%{opacity: 0; }
+    100%{opacity: 1;}
+}
+
+@keyframes blackening{
+    0%{background-color: rgba(0, 0, 0, 0.5);}
+    0%{background-color: rgba(0, 0, 0, 1);}
+
+}
